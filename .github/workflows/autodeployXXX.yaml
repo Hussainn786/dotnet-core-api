@@ -6,10 +6,10 @@ name: autodeployXXX
     workflow_dispatch: {}
 env:
     ACR_RESOURCE_GROUP: RGForAppService
-    AZURE_CONTAINER_REGISTRY: acrworkflow1714399692718
+    AZURE_CONTAINER_REGISTRY: acrworkflow1714400516705
     CLUSTER_NAME: AKScluster
     CLUSTER_RESOURCE_GROUP: RGForAppService
-    CONTAINER_NAME: image-workflow-1714399692718
+    CONTAINER_NAME: image-workflow-1714400516705
     DEPLOYMENT_MANIFEST_PATH: |
         manifests/deployment.yaml
         manifests/service.yaml
@@ -62,4 +62,4 @@ jobs:
                 action: deploy
                 images: ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ github.sha }}
                 manifests: ${{ env.DEPLOYMENT_MANIFEST_PATH }}
-                namespace: namespace-workflow-1714399692718
+                namespace: namespace-workflow-1714400516705
